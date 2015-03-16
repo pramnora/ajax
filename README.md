@@ -1,2 +1,2 @@
 # ajax
-AJAZ program code
+AJAX/Asynchronous Javascript And XML program code
