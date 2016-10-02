@@ -23,7 +23,7 @@
  <h1>JSON-AJAX-01</h1>
  <input type="button" id="btn1" value="Update" />
  <hr />
- <h2>Data stored/collected from external server</h2>
+ <h2>JSON data stored/collected from external server</h2>
  <ul>
   <li>
    <a href="http://www.myjson.com">
@@ -37,10 +37,11 @@
   </li>
  </ul>
  <hr />
- <h2>Data output</h2>
+ <h2>JSON data output (called using AJAX)</h2>
  <div id="output"></div>
  <!--javascript code/start-->
  <script>
+ //*** AJAX Call to JSON data...
  var output=document.getElementById("output");
  document.getElementById("btn1").onclick=function(){
   var a = new XMLHttpRequest();
