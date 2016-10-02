@@ -1,0 +1,59 @@
+<DOCTYPE html>
+<html lang="en">
+<!--
+      PROGRAM: My first JSON/AJAX application
+      COMPUTER: Desktop PC/Windows 10/Notepad
+        AUTHOR: Mr. Paul Ramnora
+         EMAIL: paul@ramnora.com
+     COPYRIGHT:(c)2016, Mr. Paul Ramnora./All rights reserved. 
+       CREATED: 16:09 02/10/2016
+       UPDATED: 16:09 02/10/2016
+     -------------------------------------------------------------------
+     WHAT THE PROGRAM DOES
+     The program collects JSON data which is stored on an external server
+     by using AJAX; then, displays this data inside of the HTML web page.
+     ------------------------------------------------------------------------
+     NOTE: There are still some 'undefined' errors which needs debugging...?!
+-->
+ <head>
+  <meta charset="UTF-8" />
+  <title>JSON-AJAX-01</title>
+ </head>
+ <body>
+ <h1>JSON-AJAX-01</h1>
+ <input type="button" id="btn1" value="Update" />
+ <hr />
+ <h2>Data stored/collected from external server</h2>
+ <ul>
+  <li>
+   <a href="http://www.myjson.com">
+    http://www.myjson.com
+   </a>
+  </li>
+  <li>
+   <a href="https://api.myjson.com/bins/1b2b8">
+    https://api.myjson.com/bins/1b2b8
+   </a>
+  </li>
+ </ul>
+ <hr />
+ <h2>Data output</h2>
+ <div id="output"></div>
+ <!--javascript code/start-->
+ <script>
+ var output=document.getElementById("output");
+ document.getElementById("btn1").onclick=function(){
+  var a = new XMLHttpRequest();
+  a.onreadystatechange=function(){
+   if(this.readyState==4){
+    var myObj=this.responseText;
+   }//...end if
+   output.innerHTML=myObj;
+  }//...end inner function
+ a.open("GET","https://api.myjson.com/bins/1b2b8",true);
+ a.send();
+ }//...end outer function
+ </script>
+ <!--javascript code/end-->
+ </body>
+</html> 
